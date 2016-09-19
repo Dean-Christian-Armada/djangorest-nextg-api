@@ -15,7 +15,7 @@ class FeatureToggling(APIView):
 	serializer_class = FeatureTogglingSerializer
 
 	def get(self, request, *args, **kwargs):
-		_array = FeatureToggle.objects.filter()
+		_array = FeatureToggle.objects.filter(status=1)
 		serializer = self.serializer_class(_array, many=True)
 		data = serializer.data
 		return Response(standardResponse(data=data), status=status.HTTP_200_OK)
