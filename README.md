@@ -38,8 +38,7 @@ Do we want a standalone server?
 Pros:
 -   If we horizontally scale application servers then we will want a standalone redis server to easily invalidate the cache
 
-Possibile Options:
-
+Cache backends:
 -   Redis
     -   Pros:
         -   Development Team has most experience with this
@@ -49,9 +48,18 @@ Possibile Options:
 -   Memcache
     -   Pros:
         -   Multithreaded and fast [Source](<http://stackoverflow.com/questions/10558465/memcached-vs-redis>)
--   Vagrant
-
-
+        
+"Because Redis is newer and has more features than Memcached, Redis is almost always the better choice. However, Memcached could be preferable when caching relatively small and static data, such as HTML code fragments." 
+"Redis focuses on adding more features"
+"Memache focuses on stability"
+"memcache is easier to scale because it is multi threaded. Redis has to be scaled horizontally"
+"Last but not least, in terms of operational visibility, Redis provides a slew of metrics and a wealth of introspective commands with which to monitor and track usage and abnormal behavior." 
+[source](http://www.infoworld.com/article/3063161/application-development/why-redis-beats-memcached-for-caching.html)
+        
+Reverse Proxy Cache: 
+-   Varnish
+-   Nginx
+-   Apache
 
 ### Load Balancer: ###
 
@@ -207,7 +215,7 @@ Once project is deployed, test migration time on similar dataset with similar si
 -   Use the imperative mood in the subject line
 -   Wrap the body at 72 characters
 -   Use the body to explain what and why vs. how
--   Large white space changes / code cleanups should be in their own commit
+Large white space changes / code cleanups should be in their own commit
 
 
 
