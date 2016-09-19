@@ -1,6 +1,9 @@
 from django.contrib import admin
 
-from . models import FeatureToggling
+from . models import FeatureToggle
+
+class FeatureToggleAdmin(admin.ModelAdmin):
+	list_display = ('name', 'status')
 
 # Register your models here.
-admin.site.register(FeatureToggling)
+admin.site.register(FeatureToggle, FeatureToggleAdmin)
