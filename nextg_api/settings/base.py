@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'functional_tests',
 ]
 
 MANUALLY_BUILT_APPS = [
@@ -50,6 +49,7 @@ MANUALLY_BUILT_APPS = [
     'assessor',
     'workplace_supervisor',
     'students',
+    'functional_tests',
 ]
 INSTALLED_APPS += MANUALLY_BUILT_APPS
 
