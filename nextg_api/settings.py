@@ -41,6 +41,14 @@ INSTALLED_APPS = [
 
 MANUALLY_BUILT_APPS = [
     'core',
+    'core.conversations',
+    'core.reports',
+    'core.groups',
+    'core.accounts',
+    'system_admin',
+    'assessor',
+    'workplace_supervisor',
+    'students',
 ]
 INSTALLED_APPS += MANUALLY_BUILT_APPS
 
@@ -54,7 +62,7 @@ INSTALLED_APPS += THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     # https://github.com/evonove/django-oauth-toolkit/pull/300/files
-    'oauth2_provider.middleware.CorsMiddleware', # To let the allowed_uris be the CORSHeader whitelist
+    # 'oauth2_provider.middleware.CorsMiddleware', # To let the allowed_uris be the CORSHeader whitelist
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
