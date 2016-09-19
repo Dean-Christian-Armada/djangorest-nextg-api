@@ -53,6 +53,7 @@ MANUALLY_BUILT_APPS = [
 INSTALLED_APPS += MANUALLY_BUILT_APPS
 
 THIRD_PARTY_APPS = [
+    'corsheaders',
     'rest_framework', # Restful API library for Django
     'oauth2_provider', # Oauth2 library especially made for django with django rest framework integration
     'rest_framework_docs', # Library for creating API Documentation
@@ -63,6 +64,7 @@ INSTALLED_APPS += THIRD_PARTY_APPS
 MIDDLEWARE = [
     # https://github.com/evonove/django-oauth-toolkit/pull/300/files
     # 'oauth2_provider.middleware.CorsMiddleware', # To let the allowed_uris be the CORSHeader whitelist
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -179,3 +181,9 @@ REST_FRAMEWORK = {
     )
 }
 # END Django Rest Framework settings
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+OAUTH2_PROVIDER = {
+    "ACCESS_TOKEN_EXPIRE_SECONDS": 7776000 # 3 months
+}
