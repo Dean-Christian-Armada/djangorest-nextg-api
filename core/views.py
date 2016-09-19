@@ -8,7 +8,7 @@ from rest_framework import status
 
 class FeatureToggling(APIView):
 	"""
-	**GET** - lists all Albums
+	**GET** - lists all available features
 	"""
 	# serializer_class = AlbumSerializer
 

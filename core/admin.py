@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from . models import FeaturedToggling
+from . models import FeatureToggling
 
 # Register your models here.
-admin.site.register(FeaturedToggling)
+admin.site.register(FeatureToggling)
