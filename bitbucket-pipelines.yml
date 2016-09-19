@@ -1,0 +1,13 @@
+image:
+  name: benlooplabs/nextg
+  username: $USERNAME
+  password: $PASSWORD
+  email:  $EMAIL
+
+pipelines:
+  default:
+    - step:
+        script:
+          - /etc/init.d/postgresql start
+          - tox
+          - flake8 --exclude=env,.tox --ignore=F403,F401,F405,E501
