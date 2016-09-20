@@ -15,7 +15,17 @@ class FeatureToggle(models.Model):
 	def __unicode__(self):
 		return self.name
 
-class School(models.Model):
+class AUState(models.Model):
+	name = models.CharField(max_length=50)
+
+# For multi-table inheritance
+class Address(models.Model):
+	street = models.TextField()
+	suburb = models.CharField(max_length=75)
+	state = models.ForeignKey(AUState)
+	post_code = models.IntegerField()
+
+class School(Address):
 	logo = models.ImageField(upload_to=school_logo_upload_path_handler)
 	name = models.CharField(max_length=75)
 	code = models.CharField(max_length=15)
