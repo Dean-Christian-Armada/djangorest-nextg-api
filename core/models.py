@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 
+from django.contrib.auth.models import User
 from django.db import models
 
 from core.methods import school_logo_upload_path_handler
@@ -22,3 +23,14 @@ class School(models.Model):
 
 	def __unicode__(self):
 		return self.name
+
+class UserType(models.Model):
+	name = models.CharField(max_length=50)
+
+class UserAccount(models.Model):
+	user = models.ForeignKey(User)
+	user_type = models.ForeignKey("UserType")
+	school = models.ForeignKey("School")
+	middle_name = models.CharField(max_length=50)
+	last_login = models.DateTimeField(auto_now_add=True)
+	date_added = models.DateTimeField(auto_now_add=True)
