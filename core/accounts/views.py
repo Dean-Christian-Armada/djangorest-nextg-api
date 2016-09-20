@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from rest_framework.views import APIView
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework import status
 
@@ -12,6 +13,7 @@ class Login(APIView):
 	"""
 	**GET** - lists all available features
 	"""
+	permission_classes = (AllowAny,)
 	# serializer_class = FeatureTogglingSerializer
 
 	def get(self, request, *args, **kwargs):
