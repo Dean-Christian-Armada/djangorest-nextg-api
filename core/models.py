@@ -19,6 +19,9 @@ class AUState(models.Model):
 	name = models.CharField(max_length=50)
 	code = models.CharField(max_length=10)
 
+	def __unicode__(self):
+		return self.code
+
 class School(models.Model):
 	logo = models.ImageField(upload_to=school_logo_upload_path_handler)
 	name = models.CharField(max_length=75)
@@ -35,6 +38,9 @@ class School(models.Model):
 class UserType(models.Model):
 	name = models.CharField(max_length=50)
 
+	def __unicode__(self):
+		return self.name
+
 class UserAccount(models.Model):
 	user = models.ForeignKey(User)
 	user_type = models.ForeignKey(UserType)
@@ -46,3 +52,9 @@ class UserAccount(models.Model):
 	post_code = models.IntegerField()
 	last_login = models.DateTimeField(auto_now_add=True)
 	date_added = models.DateTimeField(auto_now_add=True)
+
+	def get_name(self):
+		return "%s %s %s" % (self.user.first_name, self.user.middle_name, self.user.last_name)
+
+	def __unicode__(self):
+		return self.get_name()
