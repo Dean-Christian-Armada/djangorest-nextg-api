@@ -17,6 +17,7 @@ class FeatureToggle(models.Model):
 
 class AUState(models.Model):
 	name = models.CharField(max_length=50)
+	code = models.CharField(max_length=10)
 
 class School(models.Model):
 	logo = models.ImageField(upload_to=school_logo_upload_path_handler)
