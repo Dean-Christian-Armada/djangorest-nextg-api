@@ -4,5 +4,5 @@ from django.http import HttpResponse
 from core.accounts import views
 
 urlpatterns = [
- 	url(r'^', views.login),
+ 	url(r'^', views.login, name='login'),
 ]

@@ -17,10 +17,13 @@ class Login(APIView):
 	# serializer_class = FeatureTogglingSerializer
 
 	def get(self, request, *args, **kwargs):
-		return HttpResponse("dean")
+		return HttpResponse("get")
 		# _array = FeatureToggle.objects.filter(status=1)
 		# serializer = self.serializer_class(_array, many=True)
 		# data = serializer.data
 		# return Response(standardResponse(data=data), status=status.HTTP_200_OK)
 		
+	def post(self, request, *args, **kwargs):
+		return HttpResponse("post")
+
 login = Login.as_view()
