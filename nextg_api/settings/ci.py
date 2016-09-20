@@ -10,3 +10,14 @@ DATABASES = {
         "PORT": "5432"
     }
 }
+
+INSTALLED_APPS.append('django_nose')
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package=%s' % (','.join(MANUALLY_BUILT_APPS)),
+    '-cover-inclusive',
+]
+
