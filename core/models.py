@@ -18,17 +18,14 @@ class FeatureToggle(models.Model):
 class AUState(models.Model):
 	name = models.CharField(max_length=50)
 
-# For multi-table inheritance
-class Address(models.Model):
+class School(models.Model):
+	logo = models.ImageField(upload_to=school_logo_upload_path_handler)
+	name = models.CharField(max_length=75)
+	code = models.CharField(max_length=15)
 	street = models.TextField()
 	suburb = models.CharField(max_length=75)
 	state = models.ForeignKey(AUState)
 	post_code = models.IntegerField()
-
-class School(Address):
-	logo = models.ImageField(upload_to=school_logo_upload_path_handler)
-	name = models.CharField(max_length=75)
-	code = models.CharField(max_length=15)
 	date_added = models.DateTimeField(auto_now_add=True)
 
 	def __unicode__(self):
@@ -39,8 +36,12 @@ class UserType(models.Model):
 
 class UserAccount(models.Model):
 	user = models.ForeignKey(User)
-	user_type = models.ForeignKey("UserType")
-	school = models.ForeignKey("School")
+	user_type = models.ForeignKey(UserType)
+	school = models.ForeignKey(School)
 	middle_name = models.CharField(max_length=50)
+	street = models.TextField()
+	suburb = models.CharField(max_length=75)
+	state = models.ForeignKey(AUState)
+	post_code = models.IntegerField()
 	last_login = models.DateTimeField(auto_now_add=True)
 	date_added = models.DateTimeField(auto_now_add=True)
