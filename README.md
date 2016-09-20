@@ -124,6 +124,34 @@ Text goes here
 
 Text goes here
 
+### Front End Admin ###
+
+Possible Options:
+
+-   Django Admin
+    -   Pros:
+        -   Rapid development, easy to maintain
+    -   Cons:
+        -   Possible flexibility issues
+
+-   AngularJS
+    -   Pros:
+        -   More customizable
+    -   Cons:
+        -   Have to write and maintain client and server validation separately
+        possibilities:
+        somehow get angular to infer validation constraints from the APIs metadata
+        possibly this? http://glynjackson.org/weblog/tutorial-using-angularjs-django/
+        somehow get django admin to send back the form templates which are then compiled by angularjs
+
+-   Pure Django
+    -   Pros:
+        -   Sync form validation with model via modelforms
+        -   We have to create an API anyway for mobile front ends, may as well make admin use an API also
+    -   Cons:
+        -   not as powerful frontend logic as angular
+
+do we want to put it on a separpate server? S3? cloudfront?
 
 # Backups #
 
