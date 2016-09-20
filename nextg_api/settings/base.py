@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 ]
 
 MANUALLY_BUILT_APPS = [
+    'api',
     'core',
     'core.conversations',
     'core.reports',

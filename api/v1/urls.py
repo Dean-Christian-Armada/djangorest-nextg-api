@@ -1,12 +1,10 @@
 from django.conf.urls import url, include
 from django.http import HttpResponse
 
-from core.views import feature_toggling
+# from core import views
 
 urlpatterns = [
-	# url(r'^artists/', include('api.v1.store.artists.urls'), name="dean"),
- 	# url(r'^', include('api.v1.store.urls')),
- 	url(r'^', feature_toggling),
+ 	url(r'^', include('api.v1.core.urls')),
  	url(r'^docs/', include('rest_framework_docs.urls')),
- 	# /api/v1/docs/
+ 	url(r'^accounts/', include('api.v1.core.accounts.urls')),
 ]

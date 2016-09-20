@@ -6,7 +6,7 @@ from rest_framework import status
 
 from core.models import FeatureToggle
 from core.methods import standardResponse
-from api.v1.serializers import FeatureTogglingSerializer
+from api.v1.core.serializers import FeatureTogglingSerializer
 
 class FeatureToggling(APIView):
 	"""
