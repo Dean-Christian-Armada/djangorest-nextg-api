@@ -179,7 +179,24 @@ use explicity relative imports instead of absolute imports to keep apps easily m
 
 Test Driven Development
 
-TODO: add more detail about how strict TDD
+Write / update a test for every change you make to the application *before* you make the change. Only write code when there is a test failing for it. No cheating!
+
+1. Write the test
+2. Run the test (there is no implementation code, test does not pass)
+3. Write just enough implementation code to make the test pass
+4. Run all tests (tests pass)
+5. Refactor
+6. Make sure tests still pass
+7. Repeat
+
+Generally there should be at least one test for each function, plus one for each if statement inside the function.
+
+Avoid fixtures for they are hard to maintain as the project evolves and data structures change. Use factory boy instead.
+
+Use descriptive names for test methods for they help document the codebase.
+
+Each test should only test one thing. Don't be afraid to break a test into multiple tests. DRY (Do not Repeat Yourself) principle does not apply for unit tests.
+
 
 Fat models [source](http://django-best-practices.readthedocs.io/en/latest/applications.html)
 

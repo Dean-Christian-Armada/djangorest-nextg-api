@@ -19,5 +19,6 @@ NOSE_ARGS = [
     '--with-coverage',
     '--cover-package=%s' % (','.join(MANUALLY_BUILT_APPS)),
     '-cover-inclusive',
+    '-cover-branches',
 ]
 
