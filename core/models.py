@@ -38,14 +38,26 @@ class Course(models.Model):
 	name = models.CharField(max_length=75)
 	code = models.CharField(max_length=15)
 
+	def __unicode__(self):
+		return self.name
+
 class SchoolsAndCourses(models.Model):
 	school = models.ForeignKey(School)
 	course = models.ForeignKey(Course)
+
+	def __unicode__(self):
+		return "%s - %s" % (self.school.name, self.course.name)
 
 class Unit(models.Model):
 	name = models.CharField(max_length=10)
 	description = models.TextField()
 
+	def __unicode__(self):
+		return self.name
+
 class CoursesAndUnits(models.Model):
 	school_course = models.ForeignKey(SchoolsAndCourses)
 	unit = models.ForeignKey(Unit)
+
+	def __unicode__(self):
+		return "%s - %s" % (self.school_course, self.unit)

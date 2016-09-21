@@ -37,6 +37,29 @@ class UsersAndCourses(models.Model):
 	start = models.DateField(auto_now_add=True)
 	end = models.DateField(null=True, blank=True)
 
+	def __unicode__(self):
+		return "%s - %s" % (self.user_account, self.school_course)
+
 class UsersAndUnits(models.Model):
 	user_account = models.ForeignKey(UserAccount)
 	course_unit = models.ForeignKey(CoursesAndUnits)
+
+	def __unicode__(self):
+		return "%s - %s" % (self.user_account, self.course_unit)
+
+	# Get unit method used upon landing page of log-in of a student
+	# def get_student_units(self):
+	# 	x = UsersAndUnits.objects.filter(user_id=self)
+
+
+# {
+#     "code":"CHCLEG001", 
+#     "description":"Work legally and ethically", 
+#     "percentage": "15",
+#    }
+
+#   def get_albums(self):
+# 		x = Album.objects.filter(artist_id=self.id)
+# 		# print x.values('name')
+# 		return x.values('name')
+
