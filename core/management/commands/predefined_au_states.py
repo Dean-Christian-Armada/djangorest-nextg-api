@@ -9,9 +9,9 @@ class Command(BaseCommand):
 		print "Deleting Current AU States"
 		self.clear()
 		print "Creating AU States"
-		self.make_au_states()
+		self.make_data()
 		print "done"
-	def make_au_states(self):
+	def make_data(self):
 		AUState.objects.create(name="New South Wales", code="NSW")
 		AUState.objects.create(name="Queensland", code="QLD")
 		AUState.objects.create(name="Tasmania", code="TAS")
