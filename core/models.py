@@ -43,8 +43,7 @@ class SchoolsAndCourses(models.Model):
 	course = models.ForeignKey(Course)
 
 class Unit(models.Model):
-	name = models.CharField(max_length=75)
-	code = models.CharField(max_length=10)
+	name = models.CharField(max_length=10)
 	description = models.TextField()
 
 class CoursesAndUnits(models.Model):
