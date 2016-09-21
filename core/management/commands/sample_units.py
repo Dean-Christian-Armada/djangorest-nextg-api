@@ -1,11 +1,11 @@
 # Source: https://qbox.io/blog/elasticsearch-python-django-database
 from django.core.management.base import BaseCommand
 
-from core.accounts.models import UserType
+from core.models import Unit
 
 class Command(BaseCommand):
-	title = "User Type"
-	help = "My command for filling up the "+title+" Model"
+	title = "Unit"
+	help = "My command for filling up samples of "+title+" Model"
 	def handle(self, *args, **options):
 		print "Deleting Current "+self.title+"s"
 		self.clear()
@@ -13,9 +13,8 @@ class Command(BaseCommand):
 		self.make_data()
 		print "done"
 	def make_data(self):
-		UserType.objects.create(name="Student")
-		UserType.objects.create(name="Assessor")
-		UserType.objects.create(name="Supervisor")
+		Unit.objects.create(name="CHCLEG001", description="Work legally and ethically")
+		Unit.objects.create(name="CHCCE009", description="Used an approved learning framework to guide practice")
 
 	def clear(self):
-		UserType.objects.all().delete()
+		Unit.objects.all().delete()

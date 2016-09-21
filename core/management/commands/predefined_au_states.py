@@ -4,11 +4,12 @@ from django.core.management.base import BaseCommand
 from core.models import AUState
 
 class Command(BaseCommand):
-	help = "My command for filling up the AU States Model"
+	title = "AU States"
+	help = "My command for filling up the "+title+" Model"
 	def handle(self, *args, **options):
-		print "Deleting Current AU States"
+		print "Deleting Current "+self.title+"s"
 		self.clear()
-		print "Creating AU States"
+		print "Creating "+self.title+"s"
 		self.make_data()
 		print "done"
 	def make_data(self):
