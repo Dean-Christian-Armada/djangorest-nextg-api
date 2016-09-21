@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.contrib.auth.models import User
 from django.db import models
 
-from core.models import School, AUState
+from core.models import School, AUState, SchoolsAndCourses, CoursesAndUnits
 
 # Create your models here.
 
@@ -30,3 +30,13 @@ class UserAccount(models.Model):
 
 	def __unicode__(self):
 		return self.get_name()
+
+class UsersAndCourses(models.Model):
+	user_account = models.ForeignKey(UserAccount)
+	school_course = models.ForeignKey(SchoolsAndCourses)
+	start = models.DateField(auto_now_add=True)
+	end = models.DateField(null=True, blank=True)
+
+class UsersAndUnits(models.Model):
+	user_account = models.ForeignKey(UserAccount)
+	course_unit = models.ForeignKey(CoursesAndUnits)
