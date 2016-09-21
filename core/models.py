@@ -22,7 +22,7 @@ class AUState(models.Model):
 		return self.code
 
 class School(models.Model):
-	logo = models.ImageField(upload_to=school_logo_upload_path_handler)
+	logo = models.ImageField(upload_to=school_logo_upload_path_handler, null=True, blank=True)
 	name = models.CharField(max_length=75)
 	code = models.CharField(max_length=15)
 	street = models.TextField()

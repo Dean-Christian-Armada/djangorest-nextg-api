@@ -26,7 +26,7 @@ class UserAccount(models.Model):
 	date_added = models.DateTimeField(auto_now_add=True)
 
 	def get_name(self):
-		return "%s %s %s" % (self.user.first_name, self.user.middle_name, self.user.last_name)
+		return "%s %s %s" % (self.user.first_name, self.middle_name, self.user.last_name)
 
 	def __unicode__(self):
 		return self.get_name()
