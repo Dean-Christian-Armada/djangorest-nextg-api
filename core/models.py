@@ -33,3 +33,20 @@ class School(models.Model):
 
 	def __unicode__(self):
 		return self.name
+
+class Course(models.Model):
+	name = models.CharField(max_length=75)
+	code = models.CharField(max_length=15)
+
+class SchoolsAndCourses(models.Model):
+	school = models.ForeignKey(School)
+	course = models.ForeignKey(Course)
+
+class Unit(models.Model):
+	name = models.CharField(max_length=75)
+	code = models.CharField(max_length=10)
+	description = models.TextField()
+
+class CoursesAndUnits(models.Model):
+	school_course = models.ForeignKey(SchoolsAndCourses)
+	unit = models.ForeignKey(Unit)
