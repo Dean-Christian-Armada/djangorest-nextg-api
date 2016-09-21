@@ -47,19 +47,6 @@ class UsersAndUnits(models.Model):
 	def __unicode__(self):
 		return "%s - %s" % (self.user_account, self.course_unit)
 
-	# Get unit method used upon landing page of log-in of a student
-	# def get_student_units(self):
-	# 	x = UsersAndUnits.objects.filter(user_id=self)
-
-
-# {
-#     "code":"CHCLEG001", 
-#     "description":"Work legally and ethically", 
-#     "percentage": "15",
-#    }
-
-#   def get_albums(self):
-# 		x = Album.objects.filter(artist_id=self.id)
-# 		# print x.values('name')
-# 		return x.values('name')
-
+	# Temporary value
+	def get_homework_percentage(self):
+		return 15
