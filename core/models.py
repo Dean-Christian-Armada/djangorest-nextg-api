@@ -34,6 +34,9 @@ class School(models.Model):
 	def __unicode__(self):
 		return self.name
 
+	def get_school_address(self):
+		return "{} {} {} {}".format(self.street, self.suburb, self.state, self.post_code)
+
 class Course(models.Model):
 	name = models.CharField(max_length=75)
 	code = models.CharField(max_length=15)

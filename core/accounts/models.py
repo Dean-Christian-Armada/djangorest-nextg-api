@@ -3,6 +3,8 @@ from __future__ import unicode_literals
 from django.contrib.auth.models import User
 from django.db import models
 
+from collections import OrderedDict
+
 from core.models import School, AUState, SchoolsAndCourses, CoursesAndUnits
 
 # Create your models here.
@@ -30,6 +32,9 @@ class UserAccount(models.Model):
 
 	def __unicode__(self):
 		return self.get_name()
+
+	def get_school(self):
+		return {"name": self.school.name, "address": self.school.get_school_address()}
 
 class UsersAndCourses(models.Model):
 	user_account = models.ForeignKey(UserAccount)
