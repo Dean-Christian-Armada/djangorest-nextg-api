@@ -41,7 +41,7 @@ class Command(BaseCommand):
 			data = "grant_type=password&username=dean&password=armada13"
 			headers = {"content-type": "application/x-www-form-urlencoded"}
 			r = requests.post(token_url, data=data, auth=(app.client_id, app.client_secret), headers=headers)
-			print json.loads(r.content)['access_token']
+			print "ACCESS TOKEN  "+json.loads(r.content)['access_token']
 			school = School.objects.create(name="Don Bosco Technical College", code="DBTC", street=street, suburb=suburb, state=state, post_code=post_code)
 			UserAccount.objects.create(id=8, user=user, user_type=user_type, school=school, middle_name="Guinto", street=street, suburb=suburb, state=state, post_code=post_code)
 
