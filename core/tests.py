@@ -2,25 +2,42 @@ from django.test import TestCase
 from django.core.urlresolvers import reverse
 
 from rest_framework.test import APITestCase
+from rest_framework import status
 
-from core.vars import hostname
+from core.models import FeatureToggle
+from core.vars import token_url, hostname
 
 import ast
+import json
 
 # Create your tests here.
 
-url = hostname+"/o/token/"
+url = token_url
+url_1 = hostname+"/v1/"
+
+class FeatureToggling(APITestCase):
+	fixtures = ['feature_toggle.json']
+	def test_get(self):
+		# python manage.py dumpdata core.FeatureToggle --indent=4 > core/fixtures/feature_toggle.json
+		response = self.client.get(url_1)
+		data = json.loads(response.content)["data"]
+		self.assertIn("status", data[0]) # Check if there is a "status" key
+		self.assertEqual(1, data[0]['status']) # Make sure that only with status true is shown
+		self.assertIn("name", data[0]) # Check if there is a "name" key
+		self.assertNotEqual(0, len(data[0]['name'])) # Make sure that the value is not empty
+		self.assertEqual(response.status_code, status.HTTP_200_OK)
+
 
 class OauthAccessToken(APITestCase):
 
 	# python manage.py dumpdata oauth2_provider.application --indent=4 > core/fixtures/applications_2016_09_20.json
 	# python manage.py dumpdata auth.User --indent=4 > core/fixtures/users_2016_09_20.json
 	# users is required because it is a foreign key of the applications
-	fixtures = ['users_2016_09_20.json', 'applications_2016_09_20.json']
+	fixtures = ['users_2016_09_22.json', 'applications_2016_09_22.json']
 
 	def setUp(self):
-		token = "Basic QnBQZnQ3Q0g3Tm9HOXNiWU44dHAzeTkzT2hSZ0ROZHlGMk8xZFRHVjpCd0tTRm9lMzRzME03eDl5M3hXeVh0TWZPczI0d3Byekk2cjNpdTM5QzBwUVlWVm1KamtScUpPRFVNRGx6RHp5bktROFR2cktuaGJLUUdIeG9pNmV5dnJIM0hYRFQxbTkwc1lJYmdEdlNVdVJrQjZ3eTJ6d2dDWEdRYWYxaEdCbw=="
-		_data = "grant_type=password&username=admin&password=pass1234"
+		token = "Basic ZVMyUjVUM2RlSFhNUW0wZWZRcVdiRjE1ekxyT09lSnhqR2xmaWZ4TTpIa2cxOXhta3RsbHBRdjRDRXRkZUFnbXJuSElrYVRGN1BzcTRNYmZIVFpvcll1MkFRMXRQaTJUenI4WFRoTmw1cE5pMU1NYWV1dm9LbGg4YmNzcDJYOGw1SmRiVk1GakhBRGx6RkZMSFFNbG5iTzJWTGxPbkFjTW1aRU01Q2Zsbg=="
+		_data = "grant_type=password&username=dean&password=armada13"
 		self.client.credentials(HTTP_AUTHORIZATION=token)
 		response = self.client.post(url, _data, content_type="application/x-www-form-urlencoded")
 		response = response.content # Gets the content of the response

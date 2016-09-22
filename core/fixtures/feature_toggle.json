@@ -1,0 +1,18 @@
+[
+{
+    "model": "core.featuretoggle",
+    "pk": 1,
+    "fields": {
+        "name": "Messaging",
+        "status": true
+    }
+},
+{
+    "model": "core.featuretoggle",
+    "pk": 2,
+    "fields": {
+        "name": "Login",
+        "status": true
+    }
+}
+]
