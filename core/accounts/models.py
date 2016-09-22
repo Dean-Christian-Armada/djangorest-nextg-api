@@ -31,7 +31,7 @@ class UserAccount(models.Model):
 		return "%s %s %s" % (self.user.first_name, self.middle_name, self.user.last_name)
 
 	def __unicode__(self):
-		return self.get_name()
+		return "{} - {}".format(self.id, self.get_name())
 
 	def get_school(self):
 		return {"name": self.school.name, "address": self.school.get_school_address()}

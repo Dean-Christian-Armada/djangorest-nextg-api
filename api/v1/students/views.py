@@ -9,6 +9,7 @@ from core.accounts.models import UsersAndUnits
 from core.methods import standardResponse
 from api.v1.students.serializers import UnitsAndUsersSerializer
 
+
 class UnitsList(APIView):
 	"""
 	**GET** - lists all available units

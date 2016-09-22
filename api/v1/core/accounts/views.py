@@ -2,20 +2,15 @@ from api.v1.core.accounts.serializers import LoginAuthenticationSerializer
 
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
-from django.shortcuts import render
-from django.http import HttpResponse
 
 from rest_framework import status
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from core.models import FeatureToggle
 from core.methods import standardResponse
 
 from core.accounts.models import UserAccount
-
-from oauth2_provider.models import AccessToken
 
 class Login(APIView):
 	"""
@@ -24,14 +19,6 @@ class Login(APIView):
 	model 				= User
 	permission_classes 	= (AllowAny,)
 	serializer_class 	= LoginAuthenticationSerializer
-	# queryset            = User.objects.all()
-
-	def get(self, request, *args, **kwargs):
-		return HttpResponse("get")
-		# _array = FeatureToggle.objects.filter(status=1)
-		# serializer = self.serializer_class(_array, many=True)
-		# data = serializer.data
-		# return Response(standardResponse(data=data), status=status.HTTP_200_OK)
 		
 		
 	def post(self, request, *args, **kwargs):
@@ -44,8 +31,6 @@ class Login(APIView):
 				user_account = UserAccount.objects.get(user=login_auth)
 
 				serializer = self.serializer_class(user_account)
-
-				# serializer.data["token"] = "Bearer {}".format(AccessToken.objects.get(user=login_auth).token)
 
 				return Response(standardResponse(data=serializer.data), status=status.HTTP_200_OK)
 			else:

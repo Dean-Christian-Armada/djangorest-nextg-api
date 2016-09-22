@@ -28,6 +28,6 @@ urlpatterns = [
 
     # START Restful Related URLS
     url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
-    url(r'^api/', include('api.urls')),
+    url(r'^v1/', include('api.v1.urls')),
     # END Restful Related URLS
 ]
