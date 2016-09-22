@@ -1,0 +1,38 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$30000$6yur24Vdqiwu$fd1jBYr1YiPrXpJ6qPantsgGHCUCUgwwM+7femmDSf0=",
+        "last_login": "2016-09-22T06:17:51.169Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "dean@looplabs.com.au",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2016-09-22T06:16:23.412Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$30000$k1SF87UOsRcR$pD+4EDPR0wkVKiWaFSYH+a+S6Nmd1mWLqJ8LUqEmz6k=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "dean",
+        "first_name": "Dean",
+        "last_name": "Armada",
+        "email": "deanarmada@looplabs.com.au",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2016-09-22T06:14:58.067Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

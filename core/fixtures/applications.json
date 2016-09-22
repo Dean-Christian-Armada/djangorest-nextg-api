@@ -1,0 +1,16 @@
+[
+{
+    "model": "oauth2_provider.application",
+    "pk": 2,
+    "fields": {
+        "client_id": "eS2R5T3deHXMQm0efQqWbF15zLrOOeJxjGlfifxM",
+        "user": 2,
+        "redirect_uris": "",
+        "client_type": "public",
+        "authorization_grant_type": "password",
+        "client_secret": "Hkg19xmktllpQv4CEtdeAgmrnHIkaTF7Psq4MbfHTZorYu2AQ1tPi2Tzr8XThNl5pNi1MMaeuvoKlh8bcsp2X8l5JdbVMFjHADlzFFLHQMlnbO2VLlOnAcMmZEM5Cfln",
+        "name": "Sample ORM",
+        "skip_authorization": false
+    }
+}
+]
