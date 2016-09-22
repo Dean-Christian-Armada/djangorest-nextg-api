@@ -12,6 +12,10 @@ from core.methods import standardResponse
 
 from core.accounts.models import UserAccount
 
+from collections import OrderedDict
+
+from oauth2_provider.models import AccessToken
+
 class Login(APIView):
 	"""
 	Login Authentication
@@ -30,9 +34,11 @@ class Login(APIView):
 			if login_auth.is_active:
 				user_account = UserAccount.objects.get(user=login_auth)
 
-				serializer = self.serializer_class(user_account)
+				serializer = standardResponse(data=self.serializer_class(user_account).data)
 
-				return Response(standardResponse(data=serializer.data), status=status.HTTP_200_OK)
+				serializer["data"]["token"] = "Bearer {}".format(AccessToken.objects.get(user=login_auth).token)
+
+				return Response(OrderedDict(serializer), status=status.HTTP_200_OK)
 			else:
 				return Response(standardResponse(data=request_data, errors="User is inactive"), status=status.HTTP_400_BAD_REQUEST)
 		else:
