@@ -30,10 +30,10 @@ class FeatureToggling(APITestCase):
 
 class OauthAccessToken(APITestCase):
 
-	# python manage.py dumpdata oauth2_provider.application --indent=4 > core/fixtures/applications_2016_09_20.json
-	# python manage.py dumpdata auth.User --indent=4 > core/fixtures/users_2016_09_20.json
+	# python manage.py dumpdata oauth2_provider.application --indent=4 > core/fixtures/applications.json
+	# python manage.py dumpdata auth.User --indent=4 > core/fixtures/users.json
 	# users is required because it is a foreign key of the applications
-	fixtures = ['users_2016_09_22.json', 'applications_2016_09_22.json']
+	fixtures = ['users.json', 'applications.json']
 
 	def setUp(self):
 		token = "Basic ZVMyUjVUM2RlSFhNUW0wZWZRcVdiRjE1ekxyT09lSnhqR2xmaWZ4TTpIa2cxOXhta3RsbHBRdjRDRXRkZUFnbXJuSElrYVRGN1BzcTRNYmZIVFpvcll1MkFRMXRQaTJUenI4WFRoTmw1cE5pMU1NYWV1dm9LbGg4YmNzcDJYOGw1SmRiVk1GakhBRGx6RkZMSFFNbG5iTzJWTGxPbkFjTW1aRU01Q2Zsbg=="
