@@ -37,6 +37,8 @@ class Command(BaseCommand):
 			self.clear()
 			user_type = UserType.objects.get(name="Student")
 			user = User.objects.create_user(id=2, username="dean", password="armada13", email="deanarmada@looplabs.com.au", first_name="Dean", last_name="Armada")
+			user_2 = User.objects.create_user(id=3, username="tags", password="tagolino13", email="tags@looplabs.com.au", first_name="Ronald", last_name="Tagolino")
+			user_3 = User.objects.create_user(id=4, username="daryll", password="locsin13", email="daryll@looplabs.com.au", first_name="Daryll", last_name="Locsin")
 			app = Application.objects.create(name="Sample ORM", client_type="public", authorization_grant_type="password", user=user)
 			data = "grant_type=password&username=dean&password=armada13"
 			headers = {"content-type": "application/x-www-form-urlencoded"}
@@ -44,6 +46,8 @@ class Command(BaseCommand):
 			print "ACCESS TOKEN  "+json.loads(r.content)['access_token']
 			school = School.objects.create(name="Don Bosco Technical College", code="DBTC", street=street, suburb=suburb, state=state, post_code=post_code)
 			UserAccount.objects.create(id=8, user=user, user_type=user_type, school=school, middle_name="Guinto", street=street, suburb=suburb, state=state, post_code=post_code)
+			UserAccount.objects.create(id=9, user=user_2, user_type=user_type, school=school, middle_name="Guinto", street=street, suburb=suburb, state=state, post_code=post_code)
+			UserAccount.objects.create(id=10, user=user_3, user_type=user_type, school=school, middle_name="Guinto", street=street, suburb=suburb, state=state, post_code=post_code)
 
 	def clear(self):
 		UserAccount.objects.all().delete()

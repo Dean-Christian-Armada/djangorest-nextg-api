@@ -17,11 +17,12 @@ class Command(BaseCommand):
 		print "done"
 	def make_data(self):
 		units = Unit.objects.filter()
-		user = UserAccount.objects.latest('id')
+		users = UserAccount.objects.filter()
 		school_course = SchoolsAndCourses.objects.latest('id')
 		for x in units:
 			y = CoursesAndUnits.objects.create(school_course=school_course, unit_id=x.id)
-			UsersAndUnits.objects.create(user_account=user, course_unit=y)
+			for _user in users:
+				UsersAndUnits.objects.create(user_account=_user, course_unit=y)
 
 	def clear(self):
 		UsersAndUnits.objects.all().delete()
