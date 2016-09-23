@@ -184,7 +184,16 @@ REST_FRAMEWORK = {
     # Source: http://stackoverflow.com/questions/11898065/how-to-disable-admin-style-browsable-interface-of-django-rest-framework
     'DEFAULT_RENDERER_CLASSES': (
         'rest_framework.renderers.JSONRenderer',
-    )
+    ),
+    # Custom Exception Handler
+    'EXCEPTION_HANDLER': 'core.exceptions.custom_exception_handler',
+    # Throttling
+    'DEFAULT_THROTTLE_CLASSES': (
+        'rest_framework.throttling.ScopedRateThrottle',
+    ),
+    'DEFAULT_THROTTLE_RATES': {
+        'login-auth': '3/min'
+    }
 }
 # END Django Rest Framework settings
 

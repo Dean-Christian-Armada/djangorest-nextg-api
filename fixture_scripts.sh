@@ -26,3 +26,5 @@ python manage.py dumpdata core.Unit --indent=4 > core/fixtures/units.json
 python manage.py dumpdata accounts.UsersAndUnits --indent=4 > core/accounts/fixtures/users_and_units.json
 # fixture used in students/tests.py
 python manage.py dumpdata core.CoursesAndUnits --indent=4 > core/fixtures/courses_and_units.json
+# fixture used in core/accounts/tests.py
+python manage.py dumpdata oauth2_provider.AccessToken --indent=4 > core/fixtures/access_tokens.json

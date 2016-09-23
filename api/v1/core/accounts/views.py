@@ -8,9 +8,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from core.methods import standardResponse
-
 from core.accounts.models import UserAccount
+from core.methods import standardResponse
 
 from collections import OrderedDict
 
@@ -20,6 +19,8 @@ class Login(APIView):
 	"""
 	Login Authentication
 	"""
+	throttle_scope = 'login-auth'
+
 	model 				= User
 	permission_classes 	= (AllowAny,)
 	serializer_class 	= LoginAuthenticationSerializer
@@ -42,6 +43,6 @@ class Login(APIView):
 			else:
 				return Response(standardResponse(data=request_data, errors="User is inactive"), status=status.HTTP_400_BAD_REQUEST)
 		else:
-			return Response(standardResponse(data=request_data, errors="Wrong username or password"), status=status.HTTP_400_BAD_REQUEST)
+			return Response(standardResponse(errors="Wrong username or password"), status=status.HTTP_400_BAD_REQUEST)
 
 login = Login.as_view()
