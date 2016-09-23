@@ -1,21 +1,21 @@
 [
 {
     "model": "accounts.usertype",
-    "pk": 4,
+    "pk": 49,
     "fields": {
         "name": "Student"
     }
 },
 {
     "model": "accounts.usertype",
-    "pk": 5,
+    "pk": 50,
     "fields": {
         "name": "Assessor"
     }
 },
 {
     "model": "accounts.usertype",
-    "pk": 6,
+    "pk": 51,
     "fields": {
         "name": "Supervisor"
     }

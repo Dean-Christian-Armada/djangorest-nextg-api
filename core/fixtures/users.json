@@ -21,7 +21,7 @@
     "model": "auth.user",
     "pk": 2,
     "fields": {
-        "password": "pbkdf2_sha256$30000$k1SF87UOsRcR$pD+4EDPR0wkVKiWaFSYH+a+S6Nmd1mWLqJ8LUqEmz6k=",
+        "password": "pbkdf2_sha256$30000$QzXxuIepqe0X$m5/tI92mhOBiwq/oKK0dqd3UImwXApXZOM72l7I0u60=",
         "last_login": null,
         "is_superuser": false,
         "username": "dean",
@@ -30,7 +30,43 @@
         "email": "deanarmada@looplabs.com.au",
         "is_staff": false,
         "is_active": true,
-        "date_joined": "2016-09-22T06:14:58.067Z",
+        "date_joined": "2016-09-23T08:22:48.571Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$30000$EyAN19wYi3lt$tVw3+CsBe1YWIAfPlfRdH92b1oEoiu0ROZ2l5UWnfYY=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "tags",
+        "first_name": "Ronald",
+        "last_name": "Tagolino",
+        "email": "tags@looplabs.com.au",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2016-09-23T08:22:48.790Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$30000$AwLTqhzP3v7b$dDfDA8LzJ0WZ+st5XGow87MzbUscJGnUj1FNBjFrkNU=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "daryll",
+        "first_name": "Daryll",
+        "last_name": "Locsin",
+        "email": "daryll@looplabs.com.au",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2016-09-23T08:22:49.001Z",
         "groups": [],
         "user_permissions": []
     }

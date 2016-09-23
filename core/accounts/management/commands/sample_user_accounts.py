@@ -60,3 +60,4 @@ class Command(BaseCommand):
 		School.objects.all().delete()
 		User.objects.filter(is_superuser=False).delete()
 		Application.objects.all().delete()
+		AccessToken.objects.all().delete()

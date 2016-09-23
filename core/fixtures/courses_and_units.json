@@ -1,18 +1,18 @@
 [
 {
     "model": "core.coursesandunits",
-    "pk": 1,
+    "pk": 22,
     "fields": {
-        "school_course": 1,
-        "unit": 3
+        "school_course": 12,
+        "unit": 33
     }
 },
 {
     "model": "core.coursesandunits",
-    "pk": 2,
+    "pk": 23,
     "fields": {
-        "school_course": 1,
-        "unit": 4
+        "school_course": 12,
+        "unit": 34
     }
 }
 ]

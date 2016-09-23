@@ -1,7 +1,7 @@
 [
 {
     "model": "core.austate",
-    "pk": 7,
+    "pk": 97,
     "fields": {
         "name": "New South Wales",
         "code": "NSW"
@@ -9,7 +9,7 @@
 },
 {
     "model": "core.austate",
-    "pk": 8,
+    "pk": 98,
     "fields": {
         "name": "Queensland",
         "code": "QLD"
@@ -17,7 +17,7 @@
 },
 {
     "model": "core.austate",
-    "pk": 9,
+    "pk": 99,
     "fields": {
         "name": "Tasmania",
         "code": "TAS"
@@ -25,7 +25,7 @@
 },
 {
     "model": "core.austate",
-    "pk": 10,
+    "pk": 100,
     "fields": {
         "name": "Western Australia",
         "code": "WA"
@@ -33,7 +33,7 @@
 },
 {
     "model": "core.austate",
-    "pk": 11,
+    "pk": 101,
     "fields": {
         "name": "South Australia",
         "code": "SA"
@@ -41,7 +41,7 @@
 },
 {
     "model": "core.austate",
-    "pk": 12,
+    "pk": 102,
     "fields": {
         "name": "Victoria",
         "code": "VIC"

@@ -1,11 +1,11 @@
 [
 {
     "model": "accounts.usersandcourses",
-    "pk": 1,
+    "pk": 12,
     "fields": {
-        "user_account": 8,
-        "school_course": 1,
-        "start": "2016-09-22",
+        "user_account": 10,
+        "school_course": 12,
+        "start": "2016-09-23",
         "end": null
     }
 }

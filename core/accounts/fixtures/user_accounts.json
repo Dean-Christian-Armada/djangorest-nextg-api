@@ -4,15 +4,47 @@
     "pk": 8,
     "fields": {
         "user": 2,
-        "user_type": 4,
-        "school": 1,
+        "user_type": 49,
+        "school": 12,
         "middle_name": "Guinto",
         "street": "General Kalentong Street",
         "suburb": "Mandaluyong",
-        "state": 8,
+        "state": 98,
         "post_code": 1200,
-        "last_login": "2016-09-22T06:14:58.522Z",
-        "date_added": "2016-09-22T06:14:58.522Z"
+        "last_login": "2016-09-23T08:22:49.448Z",
+        "date_added": "2016-09-23T08:22:49.448Z"
+    }
+},
+{
+    "model": "accounts.useraccount",
+    "pk": 9,
+    "fields": {
+        "user": 3,
+        "user_type": 49,
+        "school": 12,
+        "middle_name": "Guinto",
+        "street": "General Kalentong Street",
+        "suburb": "Mandaluyong",
+        "state": 98,
+        "post_code": 1200,
+        "last_login": "2016-09-23T08:22:49.451Z",
+        "date_added": "2016-09-23T08:22:49.451Z"
+    }
+},
+{
+    "model": "accounts.useraccount",
+    "pk": 10,
+    "fields": {
+        "user": 4,
+        "user_type": 49,
+        "school": 12,
+        "middle_name": "Guinto",
+        "street": "General Kalentong Street",
+        "suburb": "Mandaluyong",
+        "state": 98,
+        "post_code": 1200,
+        "last_login": "2016-09-23T08:22:49.453Z",
+        "date_added": "2016-09-23T08:22:49.453Z"
     }
 }
 ]

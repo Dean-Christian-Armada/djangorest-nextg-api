@@ -1,7 +1,7 @@
 [
 {
     "model": "core.course",
-    "pk": 1,
+    "pk": 12,
     "fields": {
         "name": "Certificate III In Early ChildHood Education",
         "code": ""

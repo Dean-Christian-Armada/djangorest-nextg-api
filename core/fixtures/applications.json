@@ -1,14 +1,14 @@
 [
 {
     "model": "oauth2_provider.application",
-    "pk": 2,
+    "pk": 13,
     "fields": {
-        "client_id": "eS2R5T3deHXMQm0efQqWbF15zLrOOeJxjGlfifxM",
+        "client_id": "c34Rc9L8SoXaLRK18M2Y1ODmMdAF2TJA9CQjyFs9",
         "user": 2,
         "redirect_uris": "",
         "client_type": "public",
         "authorization_grant_type": "password",
-        "client_secret": "Hkg19xmktllpQv4CEtdeAgmrnHIkaTF7Psq4MbfHTZorYu2AQ1tPi2Tzr8XThNl5pNi1MMaeuvoKlh8bcsp2X8l5JdbVMFjHADlzFFLHQMlnbO2VLlOnAcMmZEM5Cfln",
+        "client_secret": "Ryg96JJO3zaroxJwwkeDH3eTMDoBLSkDlpyPQokWubHMQer9Sz2wMrJ2nS8tKxelfCkWMbF51F1KhOa5RHfCtaQWjQhU4oz2NJKWvbb6rlKdYI1mGi4jMmme5EFLBEMx",
         "name": "Sample ORM",
         "skip_authorization": false
     }

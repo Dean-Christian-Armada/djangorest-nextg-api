@@ -1,12 +1,12 @@
 [
 {
     "model": "oauth2_provider.accesstoken",
-    "pk": 2,
+    "pk": 76,
     "fields": {
         "user": 2,
-        "token": "62iL9YgiLL5OPO5tBamX1YtyB0CNF0",
-        "application": 2,
-        "expires": "2016-12-22T03:17:15.921Z",
+        "token": "wP1OzwxnQfHnMsOrC6waNnWQjikuNK",
+        "application": 13,
+        "expires": "2016-12-22T08:22:49.432Z",
         "scope": "read write"
     }
 }

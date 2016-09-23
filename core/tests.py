@@ -4,11 +4,16 @@ from django.core.urlresolvers import reverse
 from rest_framework.test import APITestCase
 from rest_framework import status
 
+from oauth2_provider.models import Application, AccessToken
+
 from core.models import FeatureToggle
 from core.vars import token_url, hostname
 
+from requests.auth import HTTPBasicAuth
+
 import ast
 import json
+import requests
 
 # Create your tests here.
 
@@ -46,15 +51,11 @@ class OauthAccessToken(APITestCase):
 	# python manage.py dumpdata oauth2_provider.application --indent=4 > core/fixtures/applications.json
 	# python manage.py dumpdata auth.User --indent=4 > core/fixtures/users.json
 	# users is required because it is a foreign key of the applications
-	fixtures = ['users.json', 'applications.json']
+	# python manage.py dumpdata oauth2_provider.AccessToken --indent=4 > core/fixtures/access_tokens.json
+	fixtures = ['users.json', 'applications.json', 'access_tokens.json']
 
 	def setUp(self):
-		token = "Basic ZVMyUjVUM2RlSFhNUW0wZWZRcVdiRjE1ekxyT09lSnhqR2xmaWZ4TTpIa2cxOXhta3RsbHBRdjRDRXRkZUFnbXJuSElrYVRGN1BzcTRNYmZIVFpvcll1MkFRMXRQaTJUenI4WFRoTmw1cE5pMU1NYWV1dm9LbGg4YmNzcDJYOGw1SmRiVk1GakhBRGx6RkZMSFFNbG5iTzJWTGxPbkFjTW1aRU01Q2Zsbg=="
-		_data = "grant_type=password&username=dean&password=armada13" # client declares the content of the request
-		self.client.credentials(HTTP_AUTHORIZATION=token) # client sets the authorization header for post request
-		response = self.client.post(url, _data, content_type="application/x-www-form-urlencoded") # client makes a post request
-		response = response.content # Get the content of the response
-		response = ast.literal_eval(response) # Converts the json to dictionary
-		_token = response["access_token"] # this will be the authorization with the access token 
+		app = Application.objects.latest('id') # Get an application
+		_token = AccessToken.objects.get(application=app).token # Get the access token of the application
 		auth = "Bearer "+_token # The Authorization Header of Oauth
 		self.client.credentials(HTTP_AUTHORIZATION=auth) # client sets the authorization header oauth

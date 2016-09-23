@@ -1,10 +1,10 @@
 [
 {
     "model": "core.schoolsandcourses",
-    "pk": 1,
+    "pk": 12,
     "fields": {
-        "school": 1,
-        "course": 1
+        "school": 12,
+        "course": 12
     }
 }
 ]

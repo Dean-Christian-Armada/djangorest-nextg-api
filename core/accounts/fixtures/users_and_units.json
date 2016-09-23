@@ -1,18 +1,50 @@
 [
 {
     "model": "accounts.usersandunits",
-    "pk": 1,
+    "pk": 57,
     "fields": {
         "user_account": 8,
-        "course_unit": 1
+        "course_unit": 22
     }
 },
 {
     "model": "accounts.usersandunits",
-    "pk": 2,
+    "pk": 58,
+    "fields": {
+        "user_account": 9,
+        "course_unit": 22
+    }
+},
+{
+    "model": "accounts.usersandunits",
+    "pk": 59,
+    "fields": {
+        "user_account": 10,
+        "course_unit": 22
+    }
+},
+{
+    "model": "accounts.usersandunits",
+    "pk": 60,
     "fields": {
         "user_account": 8,
-        "course_unit": 2
+        "course_unit": 23
+    }
+},
+{
+    "model": "accounts.usersandunits",
+    "pk": 61,
+    "fields": {
+        "user_account": 9,
+        "course_unit": 23
+    }
+},
+{
+    "model": "accounts.usersandunits",
+    "pk": 62,
+    "fields": {
+        "user_account": 10,
+        "course_unit": 23
     }
 }
 ]
