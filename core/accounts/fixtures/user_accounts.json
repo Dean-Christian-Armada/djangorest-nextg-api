@@ -1,0 +1,18 @@
+[
+{
+    "model": "accounts.useraccount",
+    "pk": 8,
+    "fields": {
+        "user": 2,
+        "user_type": 4,
+        "school": 1,
+        "middle_name": "Guinto",
+        "street": "General Kalentong Street",
+        "suburb": "Mandaluyong",
+        "state": 8,
+        "post_code": 1200,
+        "last_login": "2016-09-22T06:14:58.522Z",
+        "date_added": "2016-09-22T06:14:58.522Z"
+    }
+}
+]

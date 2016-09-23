@@ -1,0 +1,23 @@
+[
+{
+    "model": "accounts.usertype",
+    "pk": 4,
+    "fields": {
+        "name": "Student"
+    }
+},
+{
+    "model": "accounts.usertype",
+    "pk": 5,
+    "fields": {
+        "name": "Assessor"
+    }
+},
+{
+    "model": "accounts.usertype",
+    "pk": 6,
+    "fields": {
+        "name": "Supervisor"
+    }
+}
+]

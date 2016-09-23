@@ -27,7 +27,19 @@ class FeatureToggling(APITestCase):
 		self.assertNotEqual(0, len(data[0]['name'])) # Make sure that the value is not empty
 		self.assertEqual(response.status_code, status.HTTP_200_OK)
 
+# Reusable class to set the UserAccount
+class SetUserAccount(APITestCase):
+	# python manage.py dumpdata accounts.UserType --indent=4 > core/accounts/fixtures/user_types.json
+	# python manage.py dumpdata accounts.UserAccount --indent=4 > core/accounts/fixtures/user_accounts.json
+	# python manage.py dumpdata core.School --indent=4 > core/fixtures/schools.json
+	# python manage.py dumpdata core.AUState --indent=4 > core/fixtures/au_states.json
+	# python manage.py dumpdata core.Course --indent=4 > core/fixtures/courses.json
+	# python manage.py dumpdata core.SchoolsAndCourses --indent=4 > core/fixtures/schools_and_courses.json
+	# python manage.py dumpdata accounts.UsersAndCourses --indent=4 > core/accounts/fixtures/user_and_courses.json
+	fixtures = ['user_types.json', 'au_states.json', 'schools.json', 'user_accounts.json', 'courses.json', 'schools_and_courses.json', 'users_and_courses.json']
+	# TODO transfer users_and_courses and courses.json to log-in
 
+# Reusable class to set the token
 class OauthAccessToken(APITestCase):
 
 	# python manage.py dumpdata oauth2_provider.application --indent=4 > core/fixtures/applications.json

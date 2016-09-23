@@ -1,0 +1,10 @@
+[
+{
+    "model": "core.course",
+    "pk": 1,
+    "fields": {
+        "name": "Certificate III In Early ChildHood Education",
+        "code": ""
+    }
+}
+]

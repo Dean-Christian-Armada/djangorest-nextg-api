@@ -1,0 +1,10 @@
+[
+{
+    "model": "core.schoolsandcourses",
+    "pk": 1,
+    "fields": {
+        "school": 1,
+        "course": 1
+    }
+}
+]

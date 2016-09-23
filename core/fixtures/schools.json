@@ -1,0 +1,16 @@
+[
+{
+    "model": "core.school",
+    "pk": 1,
+    "fields": {
+        "logo": "",
+        "name": "Don Bosco Technical College",
+        "code": "DBTC",
+        "street": "General Kalentong Street",
+        "suburb": "Mandaluyong",
+        "state": 8,
+        "post_code": 1200,
+        "date_added": "2016-09-22T06:14:58.519Z"
+    }
+}
+]
