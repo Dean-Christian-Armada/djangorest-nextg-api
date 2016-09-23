@@ -18,3 +18,9 @@ python manage.py sample_user_accounts_courses
 # To fill up a sample user with units in the db for testing
 # core.accounts.management.commands.sample_user_accounts_units.py
 python manage.py sample_user_accounts_units
+# To fill up a sample groups in the db for testing
+# core.accounts.management.commands.sample_groups.py
+python manage.py sample_groups
+# To fill up a sample user with groups in the db for testing
+# core.groups.management.commands.sample_groups_users.py
+python manage.py sample_groups_users

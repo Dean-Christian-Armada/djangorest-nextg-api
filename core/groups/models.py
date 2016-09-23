@@ -15,3 +15,11 @@ class Group(models.Model):
 
 	def __unicode__(self):
 		return self.name
+
+class UsersAndGroups(models.Model):
+	user_account = models.ForeignKey(UserAccount)
+	group = models.ForeignKey(Group)
+	date_joined = models.DateTimeField(auto_now_add=True)
+
+	def __unicode__(self):
+		return "%s - %s" % (self.group.name, self.user_account.get_name())

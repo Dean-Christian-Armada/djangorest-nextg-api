@@ -31,6 +31,7 @@ url_1 = reverse('students-units-list', kwargs={'user_account_id':8}) # The URL e
 
 class StudentUnitsTestWithoutData(OauthAccessToken):
 	fixtures = list(OauthAccessToken.fixtures) # "list" is needed so the addressing of fixtures is different 
+	fixtures += SetUserAccount.fixtures
 	def test_get(self):
 		response = self.client.get(url_1) # client makes a get request
 		self.assertEqual(response.content, "")  # Checks if there is a data content

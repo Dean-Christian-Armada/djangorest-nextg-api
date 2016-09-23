@@ -2,12 +2,12 @@
 from django.core.management.base import BaseCommand
 from django.contrib.auth.models import User
 
-from core.accounts.models import UserAccount, UsersAndUnits, CoursesAndUnits
-from core.models import Unit, SchoolsAndCourses
+from core.accounts.models import UserAccount
+from core.groups.models import Group, UsersAndGroups
 
 
 class Command(BaseCommand):
-	title = "Users and Units"
+	title = "Groups and Users"
 	help = "My command for filling up samples of "+title+" Model"
 	def handle(self, *args, **options):
 		print "Deleting Current "+self.title+" Models"
@@ -16,13 +16,11 @@ class Command(BaseCommand):
 		self.make_data()
 		print "done"
 	def make_data(self):
-		units = Unit.objects.filter()
+		groups = Group.objects.filter()
 		users = UserAccount.objects.filter()
-		school_course = SchoolsAndCourses.objects.latest('id')
-		for x in units:
-			y = CoursesAndUnits.objects.create(school_course=school_course, unit_id=x.id)
+		for x in groups:
 			for _user in users:
-				UsersAndUnits.objects.create(user_account=_user, course_unit=y)
+				UsersAndGroups.objects.create(user_account=_user, group=x)
 
 	def clear(self):
-		UsersAndUnits.objects.all().delete()
+		UsersAndGroups.objects.all().delete()
