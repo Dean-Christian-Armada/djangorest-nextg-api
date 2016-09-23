@@ -12,6 +12,8 @@ from requests.auth import HTTPBasicAuth
 import requests
 
 import json
+import sys
+
 
 class Command(BaseCommand):
 	title = "User Account"
@@ -29,10 +31,11 @@ class Command(BaseCommand):
 		post_code = 1200
 		try:
 			user = User.objects.get(first_name="Dean", last_name="Armada", username="dean")
-			user = UserAccount.objects.get(id=8)
+			# user = UserAccount.objects.get(id=8)
 			print "/////"
 			print "Already Existing"
 		except:
+			print ("%s - %s at line: %s" % (sys.exc_info()[0], sys.exc_info()[1], sys.exc_info()[2].tb_lineno))
 			print "Creating New Users"
 			self.clear()
 			user_type = UserType.objects.get(name="Student")
