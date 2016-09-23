@@ -35,7 +35,7 @@ class SetUserAccount(APITestCase):
 	# python manage.py dumpdata core.AUState --indent=4 > core/fixtures/au_states.json
 	# python manage.py dumpdata core.Course --indent=4 > core/fixtures/courses.json
 	# python manage.py dumpdata core.SchoolsAndCourses --indent=4 > core/fixtures/schools_and_courses.json
-	# python manage.py dumpdata accounts.UsersAndCourses --indent=4 > core/accounts/fixtures/user_and_courses.json
+	# python manage.py dumpdata accounts.UsersAndCourses --indent=4 > core/accounts/fixtures/users_and_courses.json
 	fixtures = ['user_types.json', 'au_states.json', 'schools.json', 'user_accounts.json', 'courses.json', 'schools_and_courses.json', 'users_and_courses.json']
 	# TODO transfer users_and_courses and courses.json to log-in
 

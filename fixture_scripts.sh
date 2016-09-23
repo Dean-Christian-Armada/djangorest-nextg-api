@@ -17,4 +17,4 @@ python manage.py dumpdata core.Course --indent=4 > core/fixtures/courses.json
 # fixture used in core/tests.py
 python manage.py dumpdata core.SchoolsAndCourses --indent=4 > core/fixtures/schools_and_courses.json
 # fixture used in core/tests.py
-python manage.py dumpdata accounts.UsersAndCourses --indent=4 > core/accounts/fixtures/user_and_courses.json
+python manage.py dumpdata accounts.UsersAndCourses --indent=4 > core/accounts/fixtures/users_and_courses.json
