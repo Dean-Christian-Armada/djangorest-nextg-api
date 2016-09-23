@@ -2,7 +2,7 @@
 from django.core.management.base import BaseCommand
 from django.contrib.auth.models import User
 
-from oauth2_provider.models import Application
+from oauth2_provider.models import Application, AccessToken
 
 from core.accounts.models import UserAccount, UserType
 from core.models import School, AUState
@@ -31,7 +31,7 @@ class Command(BaseCommand):
 		post_code = 1200
 		try:
 			user = User.objects.get(first_name="Dean", last_name="Armada", username="dean")
-			# user = UserAccount.objects.get(id=8)
+			user = UserAccount.objects.get(id=8)
 			print "/////"
 			print "Already Existing"
 		except:
@@ -46,7 +46,10 @@ class Command(BaseCommand):
 			data = "grant_type=password&username=dean&password=armada13"
 			headers = {"content-type": "application/x-www-form-urlencoded"}
 			r = requests.post(token_url, data=data, auth=(app.client_id, app.client_secret), headers=headers)
-			print "ACCESS TOKEN  "+json.loads(r.content)['access_token']
+			token = AccessToken.objects.get(application=app)
+			token.token = "wP1OzwxnQfHnMsOrC6waNnWQjikuNK"
+			token.save()
+			print "ACCESS TOKEN  "+token.token
 			school = School.objects.create(name="Don Bosco Technical College", code="DBTC", street=street, suburb=suburb, state=state, post_code=post_code)
 			UserAccount.objects.create(id=8, user=user, user_type=user_type, school=school, middle_name="Guinto", street=street, suburb=suburb, state=state, post_code=post_code)
 			UserAccount.objects.create(id=9, user=user_2, user_type=user_type, school=school, middle_name="Guinto", street=street, suburb=suburb, state=state, post_code=post_code)
