@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # fixture used in core/tests.py
 python manage.py dumpdata core.FeatureToggle --indent=4 > core/fixtures/feature_toggle.json
 # fixture used in core/tests.py
@@ -18,3 +20,9 @@ python manage.py dumpdata core.Course --indent=4 > core/fixtures/courses.json
 python manage.py dumpdata core.SchoolsAndCourses --indent=4 > core/fixtures/schools_and_courses.json
 # fixture used in core/tests.py
 python manage.py dumpdata accounts.UsersAndCourses --indent=4 > core/accounts/fixtures/users_and_courses.json
+# fixture used in students/tests.py
+python manage.py dumpdata core.Unit --indent=4 > core/fixtures/units.json
+# fixture used in students/tests.py
+python manage.py dumpdata accounts.UsersAndUnits --indent=4 > core/accounts/fixtures/users_and_units.json
+# fixture used in students/tests.py
+python manage.py dumpdata core.CoursesAndUnits --indent=4 > core/fixtures/courses_and_units.json

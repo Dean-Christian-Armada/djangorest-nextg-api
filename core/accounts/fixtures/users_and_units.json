@@ -1,0 +1,18 @@
+[
+{
+    "model": "accounts.usersandunits",
+    "pk": 1,
+    "fields": {
+        "user_account": 8,
+        "course_unit": 1
+    }
+},
+{
+    "model": "accounts.usersandunits",
+    "pk": 2,
+    "fields": {
+        "user_account": 8,
+        "course_unit": 2
+    }
+}
+]

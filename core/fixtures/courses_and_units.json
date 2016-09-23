@@ -1,0 +1,18 @@
+[
+{
+    "model": "core.coursesandunits",
+    "pk": 1,
+    "fields": {
+        "school_course": 1,
+        "unit": 3
+    }
+},
+{
+    "model": "core.coursesandunits",
+    "pk": 2,
+    "fields": {
+        "school_course": 1,
+        "unit": 4
+    }
+}
+]

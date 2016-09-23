@@ -1,0 +1,18 @@
+[
+{
+    "model": "core.unit",
+    "pk": 3,
+    "fields": {
+        "name": "CHCLEG001",
+        "description": "Work legally and ethically"
+    }
+},
+{
+    "model": "core.unit",
+    "pk": 4,
+    "fields": {
+        "name": "CHCCE009",
+        "description": "Used an approved learning framework to guide practice"
+    }
+}
+]
