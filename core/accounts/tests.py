@@ -42,3 +42,12 @@ class LoginTest(APITestCase):
 		self.assertIn("token", response_content["data"]) # Check value of data key if have a token key
 		self.assertEqual(0, len(response_content["errors"])) # Check if errors key in the content is empty
 		self.assertEqual(response.status_code, status.HTTP_200_OK) # Check if the API response status is 200 OK
+
+	def test_login_too_many_requests(self):
+		post_data = {"username": "deantest", "password": "armada13test"} # Client enter username and password
+
+		response 		 = self.client.post(self.url_login, post_data) # Client makes a post request
+		response_content = json.loads(response.content) # Content of API response
+
+		for n in range(0, 4):
+
